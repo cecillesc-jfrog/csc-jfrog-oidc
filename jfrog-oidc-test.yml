@@ -13,7 +13,7 @@ name: JFrog OIDC Test
           env:
             JF_URL: ${{ secrets.JF_URL }}
           with:
-            oidc-provider-name: github-curation-test
+            oidc-provider-name: csc-jfrog-oidc
             oidc-audience: jfrog-github
         - name: Test JF
           run: jf rt ping
@@ -31,7 +31,7 @@ name: JFrog OIDC Test
           env:
             JF_URL: ${{ secrets.JF_URL }}
           with:
-            oidc-provider-name: github-curation-test
+            oidc-provider-name: csc-jfrog-oidc
             oidc-audience: jfrog-github
         - name: Test JF
           run: jf rt ping
