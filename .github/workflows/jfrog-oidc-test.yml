@@ -13,25 +13,7 @@ name: JFrog OIDC Test
           env:
             JF_URL: ${{ secrets.JF_URL }}
           with:
-            oidc-provider-name: csc-jfrog-oidc
-            oidc-audience: jfrog-github
-        - name: Test JF
-          run: jf rt ping
-        - name: Setup JFrog CLI
-          uses: jfrog/setup-jfrog-cli@v4
-          env:
-      steps:
-        - name: Setup JFrog CLI
-      runs-on: [self-hosted, macOS]
-      steps:
-      runs-on: [self-hosted, macOS]
-      steps:
-        - name: Setup JFrog CLI
-          uses: jfrog/setup-jfrog-cli@v4
-          env:
-            JF_URL: ${{ secrets.JF_URL }}
-          with:
-            oidc-provider-name: csc-jfrog-oidc
+            oidc-provider-name: csc-github-oidc
             oidc-audience: jfrog-github
         - name: Test JF
           run: jf rt ping
