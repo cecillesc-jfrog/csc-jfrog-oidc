@@ -1,19 +1,19 @@
 name: JFrog OIDC Test
-  on:
-    workflow_dispatch:
-  permissions:
-    id-token: write
-    contents: read
-  jobs:
-    test:
-      runs-on: [self-hosted, macOS]
-      steps:
-        - name: Setup JFrog CLI
-          uses: jfrog/setup-jfrog-cli@v4
-          env:
-            JF_URL: ${{ secrets.JF_URL }}
-          with:
-            oidc-provider-name: csc-github-oidc
-            oidc-audience: jfrog-github
-        - name: Test JF
-          run: jf rt ping
+on:
+  workflow_dispatch:
+permissions:
+  id-token: write
+  contents: read
+jobs:
+  test:
+    runs-on: [self-hosted, macOS]
+    steps:
+      - name: Setup JFrog CLI
+        uses: jfrog/setup-jfrog-cli@v4
+        env:
+          JF_URL: ${{ secrets.JF_URL }}
+        with:
+          oidc-provider-name: csc-github-oidc
+          oidc-audience: jfrog-github
+      - name: Test JF
+        run: jf rt ping
